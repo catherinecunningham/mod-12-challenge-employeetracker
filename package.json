@@ -1,0 +1,24 @@
+{
+  "name": "mod-12-challenge-employeetracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catherinecunningham/mod-12-challenge-employeetracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catherinecunningham/mod-12-challenge-employeetracker/issues"
+  },
+  "homepage": "https://github.com/catherinecunningham/mod-12-challenge-employeetracker#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4",
+    "mysql2": "^2.3.3"
+  }
+}
