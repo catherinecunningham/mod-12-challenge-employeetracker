@@ -122,20 +122,29 @@ function start() {
                 })
             }
             else if (input.todo == "Update Employee Role") {
+                db.query(`select * from role`, (err, res) => {
+                    console.table(res)
+                })
+                db.query(`select * from employee`, (err, res) => {
+                    console.table(res)
+                })
                 inquirer.prompt([
                     {
                         name: "employeeid",
-                        message: "Which employee do you need to update?",
+                        message: "What is the ID of the employee?",
                         type: "input"
                     },
                     {
                         name: "newrole",
-                        message: "What is this employee's new role?",
+                        message: "What is this employee's new role ID?",
                         type: "input"
                     }
                 ])
                 .then(updatedata => {
-                    db.query(`update employee(role)`)
+                    db.query(`update employee set role_id = ${updatedata.newrole} where id = ${updatedata.employeeid}`, (err,res) => {
+                        console.table(res)
+                        start()
+                    })
                 })
             }
             })
