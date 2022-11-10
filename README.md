@@ -7,6 +7,6 @@ This application makes use of Inquirer prompts where input is added to a databas
 This was created by Catherine Cunningham with help from boot camp tutoring staff and TAs.
 
 A video walkthrough of the application can be found here:
-
+https://drive.google.com/file/d/1KEJKoBLXc0T0kmSngDVugnRPvuRY9U2z/view?usp=sharing
 
 ![image](https://user-images.githubusercontent.com/107148691/200984014-624a2f2e-04bd-446a-9331-498b6c2d8fcf.png)
