@@ -45,10 +45,10 @@ function start() {
                 })
             }
             else if (input.todo == "View All Employees") {
-                    db.query(`select * from employee`, (err, res) => {
-                        console.table(res)
-                        start()
-                    })
+                db.query(`select * from employee`, (err, res) => {
+                    console.table(res)
+                    start()
+                })
             }
             else if (input.todo == "Add Department") {
                 inquirer.prompt([
@@ -59,12 +59,12 @@ function start() {
                     }
 
                 ])
-                .then(deptdata => {
-                    db.query(`insert into department(name) values("${deptdata.deptname}")`, (err, res) => {
-                        console.table(res)
-                        start()
+                    .then(deptdata => {
+                        db.query(`insert into department(name) values("${deptdata.deptname}")`, (err, res) => {
+                            console.table(res)
+                            start()
+                        })
                     })
-                })
             }
             else if (input.todo == "Add Role") {
                 inquirer.prompt([
@@ -84,12 +84,12 @@ function start() {
                         type: "input"
                     }
                 ])
-                .then(roledata => {
-                    db.query(`insert into role(title, salary, department_id) values("${roledata.rolename}", ${roledata.rolesalary}, ${roledata.deptid});`, (err, res) => {
-                        console.table(res)
-                        start()
+                    .then(roledata => {
+                        db.query(`insert into role(title, salary, department_id) values("${roledata.rolename}", ${roledata.rolesalary}, ${roledata.deptid});`, (err, res) => {
+                            console.table(res)
+                            start()
+                        })
                     })
-                })
             }
             else if (input.todo == "Add Employee") {
                 inquirer.prompt([
@@ -114,12 +114,12 @@ function start() {
                         type: "input"
                     }
                 ])
-                .then(employeedata => {
-                    db.query(`insert into employee(first_name, last_name, role_id, manager_id) values("${employeedata.firstname}", "${employeedata.lastname}", ${employeedata.roleid}, ${employeedata.managerid});`, (err,res) => {
-                        console.table(res)
-                        start()
+                    .then(employeedata => {
+                        db.query(`insert into employee(first_name, last_name, role_id, manager_id) values("${employeedata.firstname}", "${employeedata.lastname}", ${employeedata.roleid}, ${employeedata.managerid});`, (err, res) => {
+                            console.table(res)
+                            start()
+                        })
                     })
-                })
             }
             else if (input.todo == "Update Employee Role") {
                 db.query(`select * from role`, (err, res) => {
@@ -140,12 +140,12 @@ function start() {
                         type: "input"
                     }
                 ])
-                .then(updatedata => {
-                    db.query(`update employee set role_id = ${updatedata.newrole} where id = ${updatedata.employeeid}`, (err,res) => {
-                        console.table(res)
-                        start()
+                    .then(updatedata => {
+                        db.query(`update employee set role_id = ${updatedata.newrole} where id = ${updatedata.employeeid}`, (err, res) => {
+                            console.table(res)
+                            start()
+                        })
                     })
-                })
             }
-            })
+        })
 }
