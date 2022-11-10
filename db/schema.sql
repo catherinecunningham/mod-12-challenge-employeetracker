@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS employees_db;
 
 CREATE DATABASE employees_db;
-
+use employees_db;
 CREATE TABLE department(
     id INT primary key auto_increment,
     name VARCHAR(30) not null unique
@@ -25,5 +25,11 @@ CREATE TABLE employee(
     foreign key (manager_id) references employee(id)
     );
 
+
+insert into department(name) values("HR");
+
+insert into role(title, salary, department_id) values("Manager", 56.43, 1);
+
+insert into employee(first_name, last_name, role_id, manager_id) values("Bob", "Smith", 1, null);
 
 
